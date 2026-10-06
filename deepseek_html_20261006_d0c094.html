@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al Madrasatul Qadiriya — Pang, Malappuram</title>
+<meta name="description" content="Al Madrasatul Qadiriya, Pang, Malappuram, Kerala — a centre of Islamic learning nurturing knowledge, character and service." />
+
+<script>
+/* Prevent flash of wrong theme */
+(function(){
+  try{
+    var t = localStorage.getItem('aq-theme');
+    if(!t){ t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Marcellus&family=Noto+Sans+Malayalam:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  /* brand — constant across themes */
+  --brand-900:#04201a;
+  --brand-800:#0a3628;
+  --brand-700:#0f4a37;
+  --brand-600:#15654a;
+  --gold:#c9a227;
+  --gold-2:#e6c86a;
+  --gold-soft:rgba(201,162,39,.16);
+
+  /* semantic — light theme */
+  --bg:#fbf8f1;
+  --bg-alt:#f3ede1;
+  --surface:#ffffff;
+  --surface-2:#fbf8f1;
+  --heading:#0a3628;
+  --text:#122320;
+  --muted:#5f736a;
+  --line:rgba(10,54,40,.12);
+  --divider:rgba(10,54,40,.12);
+  --tint:#e4efe9;
+  --accent:#0f4a37;
+
+  --shadow-s:0 6px 20px -10px rgba(4,32,26,.35);
+  --shadow-m:0 22px 46px -22px rgba(4,32,26,.42);
+
+  --radius:20px;
+  --maxw:1180px;
+
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23c9a227' stroke-width='1' stroke-opacity='0.16'%3E%3Cpath d='M40 4l36 36-36 36L4 40z'/%3E%3Cpath d='M40 18l22 22-22 22-22-22z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+[data-theme="dark"]{
+  --bg:#061611;
+  --bg-alt:#081e18;
+  --surface:#0c261e;
+  --surface-2:#0a2019;
+  --heading:#e9f3ee;
+  --text:#cfe0d9;
+  --muted:#8ba79b;
+  --line:rgba(201,162,39,.16);
+  --divider:rgba(255,255,255,.08);
+  --tint:rgba(21,101,74,.24);
+  --accent:#82d3b2;
+  --gold-soft:rgba(201,162,39,.13);
+  --shadow-s:0 6px 20px -10px rgba(0,0,0,.65);
+  --shadow-m:0 22px 46px -22px rgba(0,0,0,.8);
+}
+
+/* ============ RESET ============ */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .4s ease,color .4s ease;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3,h4{font-family:'Marcellus',serif;font-weight:400;line-height:1.2;margin:0;letter-spacing:.01em;color:var(--heading);}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* Malayalam typography adjustments */
+html[lang="ml"] body{font-family:'Noto Sans Malayalam','Inter',sans-serif;line-height:1.9;}
+html[lang="ml"] h1,
+html[lang="ml"] h2,
+html[lang="ml"] h3,
+html[lang="ml"] h4{font-family:'Noto Sans Malayalam','Marcellus',serif;line-height:1.45;letter-spacing:0;}
+html[lang="ml"] .eyebrow,
+html[lang="ml"] .hero-eyebrow,
+html[lang="ml"] .stat span,
+html[lang="ml"] .person .role,
+html[lang="ml"] .subjects-title,
+html[lang="ml"] .foot-col h4,
+html[lang="ml"] .event-date,
+html[lang="ml"] .event-foot,
+html[lang="ml"] .field label,
+html[lang="ml"] .info-item strong,
+html[lang="ml"] .tab,
+html[lang="ml"] .btn{letter-spacing:.02em;}
+
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px;}
+section{scroll-margin-top:88px;}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  transition:background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease;
+}
+.nav.scrolled{
+  background:rgba(251,248,241,.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(4,32,26,.6);
+}
+[data-theme="dark"] .nav.scrolled{background:rgba(6,22,17,.9);}
+
+.nav-inner{
+  max-width:var(--maxw);margin-inline:auto;padding:14px 22px;
+  display:flex;align-items:center;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand-mark{
+  width:44px;height:44px;flex:none;border-radius:13px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--brand-700),var(--brand-900));
+  color:var(--gold-2);
+  font-family:'Amiri',serif;font-size:1.45rem;line-height:1;
+  box-shadow:inset 0 0 0 1px rgba(201,162,39,.45),var(--shadow-s);
+  padding-bottom:4px;
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;}
+.brand-text strong{
+  font-family:'Marcellus',serif;font-weight:400;font-size:1.02rem;color:#fff;
+  transition:color .35s ease;white-space:nowrap;
+}
+html[lang="ml"] .brand-text strong{font-family:'Noto Sans Malayalam',serif;font-size:.95rem;}
+.brand-text small{
+  font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.62);transition:color .35s ease;white-space:nowrap;
+}
+html[lang="ml"] .brand-text small{letter-spacing:.06em;text-transform:none;}
+.nav.scrolled .brand-text strong{color:var(--heading);}
+.nav.scrolled .brand-text small{color:var(--muted);}
+
+.links{display:flex;align-items:center;justify-content:center;gap:2px;flex:1;}
+.links a{
+  position:relative;padding:9px 13px;border-radius:999px;
+  font-size:.82rem;font-weight:500;letter-spacing:.03em;
+  color:rgba(255,255,255,.82);white-space:nowrap;
+  transition:color .25s ease,background .25s ease;
+}
+html[lang="ml"] .links a{font-size:.86rem;}
+.nav.scrolled .links a{color:var(--heading);}
+.links a:hover{background:rgba(201,162,39,.16);color:#fff;}
+.nav.scrolled .links a:hover{color:var(--accent);}
+.links a.active{color:var(--gold-2);}
+.nav.scrolled .links a.active{color:var(--accent);background:var(--gold-soft);}
+
+/* --- nav tools --- */
+.nav-tools{display:flex;align-items:center;gap:8px;flex:none;}
+.tool-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:38px;min-width:38px;padding:0 14px;border-radius:999px;
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  border:1px solid rgba(255,255,255,.24);
+  color:rgba(255,255,255,.88);
+  background:rgba(255,255,255,.07);
+  transition:all .25s ease;
+}
+html[lang="ml"] .tool-btn{letter-spacing:.02em;}
+.tool-btn:hover{background:rgba(255,255,255,.16);color:#fff;transform:translateY(-1px);}
+.nav.scrolled .tool-btn{
+  border-color:var(--line);color:var(--accent);background:rgba(10,54,40,.05);
+}
+[data-theme="dark"] .nav.scrolled .tool-btn{background:rgba(255,255,255,.05);}
+.nav.scrolled .tool-btn:hover{background:var(--gold-soft);color:var(--accent);}
+.theme-btn{width:38px;padding:0;font-size:1rem;}
+.theme-btn .ico-sun{display:none;}
+[data-theme="dark"] .theme-btn .ico-sun{display:inline;}
+[data-theme="dark"] .theme-btn .ico-moon{display:none;}
+
+.nav-cta{
+  padding:10px 20px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.05em;
+  background:linear-gradient(145deg,var(--gold-2),var(--gold));color:#33290a;
+  box-shadow:0 10px 24px -14px rgba(201,162,39,.9);
+  transition:transform .25s ease,box-shadow .25s ease;white-space:nowrap;
+}
+html[lang="ml"] .nav-cta{letter-spacing:.02em;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(201,162,39,1);}
+
+.menu-btn{
+  display:none;width:42px;height:42px;border-radius:12px;
+  place-items:center;color:#fff;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+}
+.nav.scrolled .menu-btn{color:var(--heading);background:rgba(10,54,40,.06);border-color:var(--line);}
+[data-theme="dark"] .nav.scrolled .menu-btn{background:rgba(255,255,255,.06);}
+.menu-btn span{display:block;width:19px;height:2px;background:currentColor;border-radius:2px;position:relative;}
+.menu-btn span::before,.menu-btn span::after{
+  content:'';position:absolute;left:0;width:19px;height:2px;background:currentColor;border-radius:2px;
+}
+.menu-btn span::before{top:-6px;}
+.menu-btn span::after{top:6px;}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;overflow:hidden;
+  padding:140px 22px 100px;
+  background:
+    radial-gradient(1100px 620px at 18% 8%, #17604a 0%, transparent 58%),
+    radial-gradient(900px 560px at 88% 92%, #0d4433 0%, transparent 60%),
+    linear-gradient(180deg,#062a20 0%,#04201a 100%);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;background-image:var(--pattern);
+  background-size:80px 80px;opacity:.55;
+  mask-image:radial-gradient(circle at 50% 45%, #000 0%, transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 45%, #000 0%, transparent 78%);
+}
+.hero::after{
+  content:'';position:absolute;inset:auto 0 0 0;height:180px;
+  background:linear-gradient(180deg,transparent,var(--bg));
+}
+.hero-arch{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
+  width:min(560px,86vw);height:min(660px,86vh);
+  border:1px solid rgba(201,162,39,.32);
+  border-radius:290px 290px 26px 26px;
+  pointer-events:none;
+}
+.hero-arch::before{
+  content:'';position:absolute;inset:22px;
+  border:1px solid rgba(201,162,39,.16);
+  border-radius:270px 270px 16px 16px;
+}
+.hero-content{position:relative;z-index:2;max-width:840px;}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px;border-radius:999px;margin-bottom:26px;
+  background:rgba(201,162,39,.12);
+  border:1px solid rgba(201,162,39,.32);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-2);
+}
+html[lang="ml"] .hero-eyebrow{text-transform:none;font-size:.82rem;}
+.hero-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;}
+
+.hero-arabic{
+  font-family:'Amiri',serif;font-size:clamp(2.1rem,6vw,3.4rem);
+  color:var(--gold-2);line-height:1.5;margin-bottom:10px;
+  text-shadow:0 2px 30px rgba(201,162,39,.25);
+}
+.hero h1{
+  font-size:clamp(2.1rem,6.2vw,4rem);
+  letter-spacing:.01em;margin-bottom:8px;color:#fff;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--gold-2),#fff6d8 45%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-rule{
+  width:120px;height:1px;margin:26px auto;
+  background:linear-gradient(90deg,transparent,rgba(201,162,39,.8),transparent);
+  position:relative;
+}
+.hero-rule::after{
+  content:'✦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  color:var(--gold);font-size:.7rem;background:#04201a;padding:0 10px;
+}
+.hero p.lead{
+  max-width:620px;margin:0 auto 36px;
+  font-size:clamp(.98rem,2vw,1.09rem);font-weight:300;
+  color:rgba(255,255,255,.78);line-height:1.85;
+}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 30px;border-radius:999px;
+  font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  transition:transform .28s ease,box-shadow .28s ease,background .28s ease,color .28s ease;
+  text-align:center;
+}
+html[lang="ml"] .btn{text-transform:none;font-size:.9rem;}
+.btn-gold{
+  background:linear-gradient(145deg,var(--gold-2),var(--gold));color:#33290a;
+  box-shadow:0 16px 34px -16px rgba(201,162,39,.95);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 40px -16px rgba(201,162,39,1);}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.28);color:#fff;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-3px);}
+
+.hero-meta{
+  position:absolute;left:0;right:0;bottom:34px;z-index:3;
+  display:flex;justify-content:center;gap:34px;flex-wrap:wrap;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+}
+html[lang="ml"] .hero-meta{letter-spacing:.03em;text-transform:none;font-size:.82rem;}
+.hero-meta span{display:flex;align-items:center;gap:9px;}
+.hero-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.8;}
+
+/* ============ SECTION HEADINGS ============ */
+.section{padding:104px 0;position:relative;}
+.section.tint{background:linear-gradient(180deg,var(--bg),var(--bg-alt));transition:background .4s ease;}
+.sec-head{max-width:680px;margin:0 auto 58px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:.68rem;font-weight:600;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:14px;
+}
+html[lang="ml"] .eyebrow{text-transform:none;font-size:.82rem;}
+.eyebrow::before,.eyebrow::after{content:'—';margin:0 10px;opacity:.5;}
+.sec-head h2{font-size:clamp(1.7rem,4vw,2.55rem);margin-bottom:16px;}
+.sec-head p{color:var(--muted);font-size:1rem;font-weight:300;line-height:1.85;}
+
+/* ============ STATS ============ */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--divider);border:1px solid var(--divider);
+  border-radius:var(--radius);overflow:hidden;margin-top:-72px;
+  position:relative;z-index:5;box-shadow:var(--shadow-m);
+  transition:background .4s ease,border-color .4s ease;
+}
+.stat{background:var(--surface);padding:32px 20px;text-align:center;transition:background .4s ease;}
+.stat b{
+  display:block;font-family:'Marcellus',serif;font-size:clamp(1.6rem,3.6vw,2.2rem);
+  color:var(--accent);line-height:1;
+}
+.stat span{
+  display:block;margin-top:9px;font-size:.68rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);
+}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+.about-copy h2{font-size:clamp(1.75rem,4vw,2.45rem);margin-bottom:20px;}
+.about-copy p{color:var(--muted);font-weight:300;margin-bottom:18px;line-height:1.9;}
+.about-copy p:first-of-type::first-letter{
+  font-family:'Marcellus',serif;font-size:3.1rem;float:left;line-height:.85;
+  padding:6px 12px 0 0;color:var(--gold);
+}
+html[lang="ml"] .about-copy p:first-of-type::first-letter{font-family:'Noto Sans Malayalam',serif;font-size:1em;float:none;padding:0;color:inherit;}
+.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;}
+.pill{
+  padding:8px 16px;border-radius:999px;font-size:.75rem;font-weight:500;
+  letter-spacing:.05em;color:var(--accent);
+  background:var(--gold-soft);border:1px solid rgba(201,162,39,.28);
+}
+html[lang="ml"] .pill{letter-spacing:.02em;font-size:.82rem;}
+
+.about-visual{position:relative;}
+.arch-card{
+  position:relative;border-radius:300px 300px 24px 24px;overflow:hidden;
+  aspect-ratio:4/5;
+  background:
+    linear-gradient(180deg,rgba(4,32,26,.35),rgba(4,32,26,.85)),
+    radial-gradient(circle at 50% 20%, #17604a, #04201a 70%);
+  box-shadow:var(--shadow-m);
+  display:grid;place-items:center;text-align:center;padding:44px 32px;
+  border:1px solid rgba(201,162,39,.25);
+}
+.arch-card::before{
+  content:'';position:absolute;inset:0;background-image:var(--pattern);
+  background-size:70px 70px;opacity:.5;
+}
+.arch-card-inner{position:relative;z-index:2;}
+.arch-card .arabic{
+  font-family:'Amiri',serif;font-size:clamp(1.5rem,3.4vw,2rem);
+  color:var(--gold-2);line-height:1.7;margin-bottom:18px;
+}
+.arch-card .trans{
+  font-size:.85rem;color:rgba(255,255,255,.72);font-weight:300;
+  font-style:italic;line-height:1.8;
+}
+.arch-card .src{
+  display:block;margin-top:16px;font-size:.68rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(201,162,39,.75);
+}
+html[lang="ml"] .arch-card .src{letter-spacing:.04em;text-transform:none;font-size:.8rem;}
+.badge-float{
+  position:absolute;bottom:-22px;left:-22px;
+  background:var(--surface);border-radius:18px;padding:18px 24px;
+  box-shadow:var(--shadow-m);border:1px solid var(--line);
+  display:flex;align-items:center;gap:14px;transition:background .4s ease;
+}
+.badge-float b{font-family:'Marcellus',serif;font-size:1.5rem;color:var(--accent);line-height:1;}
+.badge-float small{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px;white-space:nowrap;}
+html[lang="ml"] .badge-float small{letter-spacing:.02em;text-transform:none;font-size:.76rem;}
+
+/* ============ VALUES ============ */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:72px;}
+.value{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 30px;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease,background .4s ease;
+}
+.value:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:rgba(201,162,39,.4);}
+.value .ico{
+  width:50px;height:50px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--brand-700),var(--brand-900));
+  color:var(--gold-2);font-family:'Amiri',serif;font-size:1.35rem;
+  margin-bottom:20px;box-shadow:inset 0 0 0 1px rgba(201,162,39,.35);
+}
+.value h3{font-size:1.12rem;margin-bottom:10px;}
+.value p{font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.8;}
+
+/* ============ VERSE BAND ============ */
+.verse{
+  position:relative;padding:78px 22px;text-align:center;color:#fff;overflow:hidden;
+  background:linear-gradient(120deg,var(--brand-900),var(--brand-700) 55%,var(--brand-900));
+}
+.verse::before{content:'';position:absolute;inset:0;background-image:var(--pattern);background-size:90px 90px;opacity:.4;}
+.verse-inner{position:relative;z-index:2;max-width:780px;margin-inline:auto;}
+.verse .ar{font-family:'Amiri',serif;font-size:clamp(1.4rem,3.6vw,2.05rem);color:var(--gold-2);line-height:1.8;margin-bottom:16px;}
+.verse .en{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.75);font-style:italic;}
+.verse .ref{display:block;margin-top:14px;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(201,162,39,.8);}
+html[lang="ml"] .verse .ref{letter-spacing:.04em;text-transform:none;font-size:.8rem;}
+
+/* ============ CARDS GRID ============ */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+.person{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 24px;text-align:center;position:relative;overflow:hidden;
+  transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s ease,border-color .38s ease,background .4s ease;
+}
+.person::after{
+  content:'';position:absolute;inset:auto 0 0 0;height:3px;
+  background:linear-gradient(90deg,var(--gold-2),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s ease;
+}
+.person:hover{transform:translateY(-8px);box-shadow:var(--shadow-m);border-color:rgba(201,162,39,.35);}
+.person:hover::after{transform:scaleX(1);}
+
+.avatar{
+  width:78px;height:78px;margin:0 auto 18px;border-radius:50%;
+  display:grid;place-items:center;position:relative;
+  background:linear-gradient(145deg,var(--brand-700),var(--brand-900));
+  color:var(--gold-2);font-family:'Marcellus',serif;font-size:1.4rem;
+  box-shadow:0 0 0 1px rgba(201,162,39,.4),0 0 0 7px rgba(201,162,39,.09);
+}
+.person h3{font-size:1rem;margin-bottom:5px;}
+.person .role{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.person .meta{margin-top:12px;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.7;}
+
+.tag{
+  display:inline-block;margin-top:14px;padding:6px 14px;border-radius:999px;
+  font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  color:var(--accent);background:var(--tint);
+}
+html[lang="ml"] .tag{letter-spacing:.02em;text-transform:none;font-size:.78rem;}
+.tag.gold{color:#7a5f0a;background:var(--gold-soft);}
+[data-theme="dark"] .tag.gold{color:var(--gold-2);}
+
+/* ============ SYLLABUS ============ */
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:44px;}
+.tab{
+  padding:12px 24px;border-radius:999px;font-size:.78rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--line);background:var(--surface);
+  transition:all .28s ease;
+}
+.tab:hover{border-color:rgba(201,162,39,.5);color:var(--heading);}
+.tab.active{
+  background:linear-gradient(145deg,var(--brand-700),var(--brand-900));
+  color:var(--gold-2);border-color:transparent;
+  box-shadow:0 14px 28px -16px rgba(4,32,26,.85);
+}
+
+.tab-panel{display:none;}
+.tab-panel.active{display:block;animation:fade .5s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+.syllabus-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:26px;
+  padding:clamp(28px,4vw,52px);box-shadow:var(--shadow-s);
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start;
+  transition:background .4s ease,border-color .4s ease;
+}
+.syllabus-card .level{font-family:'Marcellus',serif;font-size:1.5rem;margin-bottom:6px;color:var(--heading);}
+html[lang="ml"] .syllabus-card .level{font-family:'Noto Sans Malayalam',serif;}
+.syllabus-card .arabic-name{font-family:'Amiri',serif;font-size:1.35rem;color:var(--gold);margin-bottom:18px;}
+.syllabus-card .desc{color:var(--muted);font-weight:300;font-size:.92rem;line-height:1.85;margin-bottom:22px;}
+.spec{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.spec li{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:11px 0;border-bottom:1px dashed var(--line);font-size:.82rem;
+}
+.spec li span:first-child{color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-size:.66rem;align-self:center;}
+html[lang="ml"] .spec li span:first-child{letter-spacing:.02em;text-transform:none;font-size:.78rem;}
+.spec li span:last-child{color:var(--heading);font-weight:600;}
+
+.subjects-title{
+  font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:18px;display:block;
+}
+html[lang="ml"] .subjects-title{letter-spacing:.02em;text-transform:none;font-size:.82rem;}
+.subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.subject{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:15px 16px;border-radius:14px;
+  background:var(--surface-2);border:1px solid var(--line);
+  font-size:.85rem;color:var(--heading);font-weight:500;
+  transition:background .3s ease,transform .3s ease,border-color .3s ease;
+}
+.subject:hover{background:var(--surface);border-color:rgba(201,162,39,.4);transform:translateX(4px);}
+.subject::before{
+  content:'';width:7px;height:7px;flex:none;margin-top:8px;border-radius:2px;
+  background:var(--gold);transform:rotate(45deg);
+}
+.subject small{display:block;font-weight:300;color:var(--muted);font-size:.75rem;margin-top:2px;}
+
+/* ============ EVENTS ============ */
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.event{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s ease,background .4s ease;
+}
+.event:hover{transform:translateY(-8px);box-shadow:var(--shadow-m);}
+.event-top{
+  position:relative;padding:26px 26px 22px;
+  background:linear-gradient(140deg,var(--brand-800),var(--brand-900));
+  color:#fff;overflow:hidden;
+}
+.event-top::before{content:'';position:absolute;inset:0;background-image:var(--pattern);background-size:64px 64px;opacity:.45;}
+.event-date{
+  position:relative;z-index:2;display:inline-flex;align-items:center;gap:9px;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);
+  padding:7px 15px;border-radius:999px;background:rgba(201,162,39,.14);
+  border:1px solid rgba(201,162,39,.32);
+}
+.event-top h3{position:relative;z-index:2;margin-top:18px;font-size:1.15rem;line-height:1.35;color:#fff;}
+.event-body{padding:24px 26px 28px;flex:1;display:flex;flex-direction:column;}
+.event-body p{font-size:.87rem;color:var(--muted);font-weight:300;line-height:1.85;flex:1;}
+.event-foot{
+  margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;
+}
+.event-foot .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+/* ============ CONTACT ============ */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;}
+.contact-info h2{font-size:clamp(1.65rem,3.6vw,2.35rem);margin-bottom:18px;}
+.contact-info > p{color:var(--muted);font-weight:300;margin-bottom:34px;line-height:1.9;}
+.info-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+.info-item .ico{
+  width:44px;height:44px;flex:none;border-radius:13px;display:grid;place-items:center;
+  background:var(--gold-soft);border:1px solid rgba(201,162,39,.28);
+  color:var(--accent);font-size:1rem;
+}
+.info-item strong{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.info-item p, .info-item a{font-size:.9rem;color:var(--heading);font-weight:400;line-height:1.7;}
+.info-item a:hover{color:var(--gold);}
+
+.form-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:26px;
+  padding:clamp(26px,3.4vw,40px);box-shadow:var(--shadow-m);
+  transition:background .4s ease,border-color .4s ease;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field{margin-bottom:16px;}
+.field label{
+  display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:8px;
+}
+.field input,.field select,.field textarea{
+  width:100%;padding:14px 16px;border-radius:13px;
+  border:1px solid var(--line);background:var(--surface-2);
+  font:inherit;font-size:.9rem;color:var(--text);
+  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.field textarea{resize:vertical;min-height:120px;}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);background:var(--surface);
+  box-shadow:0 0 0 4px rgba(201,162,39,.12);
+}
+.form-card .btn-gold{width:100%;margin-top:6px;}
+.form-note{margin-top:16px;font-size:.76rem;color:var(--muted);font-weight:300;text-align:center;}
+.form-success{
+  display:none;margin-top:16px;padding:14px 18px;border-radius:13px;
+  background:var(--tint);color:var(--accent);font-size:.85rem;text-align:center;
+  border:1px solid rgba(21,101,74,.2);
+}
+.form-success.show{display:block;animation:fade .4s ease both;}
+
+.map-strip{
+  margin-top:64px;border-radius:26px;overflow:hidden;position:relative;
+  border:1px solid var(--line);box-shadow:var(--shadow-s);
+  background:linear-gradient(140deg,var(--brand-800),var(--brand-900));
+  padding:44px 32px;text-align:center;color:#fff;
+}
+.map-strip::before{content:'';position:absolute;inset:0;background-image:var(--pattern);background-size:76px 76px;opacity:.4;}
+.map-strip-inner{position:relative;z-index:2;}
+.map-strip h3{font-size:1.3rem;margin-bottom:10px;color:#fff;}
+.map-strip p{color:rgba(255,255,255,.7);font-weight:300;font-size:.9rem;margin-bottom:24px;max-width:560px;margin-inline:auto;}
+
+/* ============ FOOTER ============ */
+footer{
+  background:var(--brand-900);color:rgba(255,255,255,.7);position:relative;overflow:hidden;
+  padding:72px 0 0;
+}
+footer::before{content:'';position:absolute;inset:0;background-image:var(--pattern);background-size:88px 88px;opacity:.28;}
+.foot-inner{position:relative;z-index:2;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:56px;}
+.foot-brand{display:flex;align-items:center;gap:13px;margin-bottom:20px;}
+.foot-brand .brand-mark{width:46px;height:46px;}
+.foot-brand strong{font-family:'Marcellus',serif;font-weight:400;font-size:1.08rem;color:#fff;display:block;line-height:1.3;}
+html[lang="ml"] .foot-brand strong{font-family:'Noto Sans Malayalam',serif;font-size:1rem;}
+.foot-brand small{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+html[lang="ml"] .foot-brand small{letter-spacing:.02em;text-transform:none;font-size:.76rem;}
+.foot-about{font-size:.87rem;font-weight:300;line-height:1.9;max-width:360px;}
+.foot-col h4{
+  font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600;
+}
+.foot-col li{margin-bottom:11px;}
+.foot-col a{font-size:.87rem;font-weight:300;color:rgba(255,255,255,.68);transition:color .25s ease,padding-left .25s ease;}
+.foot-col a:hover{color:var(--gold-2);padding-left:5px;}
+.foot-col p{font-size:.87rem;font-weight:300;line-height:1.9;}
+.foot-col p a{color:rgba(255,255,255,.68);}
+.foot-col p a:hover{color:var(--gold-2);}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding:24px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:.75rem;color:rgba(255,255,255,.45);
+}
+.foot-bottom .arabic{font-family:'Amiri',serif;color:rgba(201,162,39,.7);font-size:1rem;}
+
+/* ============ BACK TO TOP ============ */
+.to-top{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--brand-700),var(--brand-900));color:var(--gold-2);
+  box-shadow:var(--shadow-m);border:1px solid rgba(201,162,39,.35);
+  opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:opacity .35s ease,transform .35s ease;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none;}
+.to-top:hover{transform:translateY(-3px);}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1100px){
+  .links a{padding:9px 10px;font-size:.78rem;}
+  .nav-cta{padding:10px 16px;font-size:.76rem;}
+}
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(3,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px;}
+  .syllabus-card{grid-template-columns:1fr;gap:34px;}
+}
+@media (max-width:900px){
+  .links{display:none;}
+  .nav-cta{display:none;}
+  .menu-btn{display:grid;}
+  .nav.open{background:rgba(4,32,26,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+  .nav.open .links{
+    display:flex;flex-direction:column;align-items:stretch;gap:2px;
+    position:absolute;top:100%;left:0;right:0;flex:none;
+    padding:14px 18px 24px;
+    background:rgba(4,32,26,.98);
+    border-top:1px solid rgba(201,162,39,.2);
+    box-shadow:0 30px 50px -20px rgba(0,0,0,.7);
+  }
+  .nav.open .links a{
+    color:rgba(255,255,255,.85) !important;padding:14px 16px;border-radius:12px;font-size:.95rem;
+  }
+  .nav.open .links a.active{background:rgba(201,162,39,.16);color:var(--gold-2) !important;}
+  .nav.open .brand-text strong,
+  .nav.open .brand-text small{color:#fff !important;}
+  .nav.open .menu-btn{color:#fff !important;background:rgba(255,255,255,.1) !important;border-color:rgba(255,255,255,.2) !important;}
+  .nav.open .tool-btn{border-color:rgba(255,255,255,.24) !important;color:rgba(255,255,255,.9) !important;background:rgba(255,255,255,.07) !important;}
+
+  .about-grid{grid-template-columns:1fr;gap:56px;}
+  .about-visual{max-width:440px;margin-inline:auto;}
+  .contact-wrap{grid-template-columns:1fr;gap:44px;}
+  .stats{grid-template-columns:repeat(2,1fr);margin-top:-60px;}
+  .values{grid-template-columns:1fr;gap:18px;}
+  .grid-3,.events-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .section{padding:78px 0;}
+  .grid-4,.grid-3,.events-grid{grid-template-columns:1fr;}
+  .subject-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-meta{gap:18px;font-size:.62rem;bottom:24px;}
+  .hero-arch{display:none;}
+  .foot-grid{grid-template-columns:1fr;gap:32px;}
+  .foot-bottom{justify-content:center;text-align:center;}
+  .badge-float{left:50%;transform:translateX(-50%);bottom:-26px;width:max-content;max-width:90%;}
+  .brand-text strong{font-size:.9rem;}
+  .brand-text small{font-size:.58rem;}
+  .tool-btn{padding:0 11px;font-size:.66rem;height:36px;min-width:36px;}
+  .theme-btn{width:36px;}
+  .grid-4,.grid-3{grid-template-columns:1fr;}
+}
+@media (max-width:380px){
+  .brand-text small{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">ق</span>
+      <span class="brand-text">
+        <strong data-ml="അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ">Al Madrasatul Qadiriya</strong>
+        <small data-ml="പാംഗ് · മലപ്പുറം">Pang · Malappuram</small>
+      </span>
+    </a>
+
+    <nav class="links" id="links">
+      <a href="#home" class="active" data-ml="ഹോം">Home</a>
+      <a href="#about" data-ml="ഞങ്ങളെക്കുറിച്ച്">About</a>
+      <a href="#teachers" data-ml="അധ്യാപകർ">Teachers</a>
+      <a href="#students" data-ml="വിദ്യാർത്ഥികൾ">Students</a>
+      <a href="#syllabus" data-ml="പാഠ്യപദ്ധതി">Syllabus</a>
+      <a href="#events" data-ml="പരിപാടികൾ">Events</a>
+      <a href="#contact" data-ml="ബന്ധപ്പെടുക">Contact</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button class="tool-btn" id="langBtn" aria-label="Switch language" title="Switch language">EN</button>
+      <button class="tool-btn theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="ico-moon">☾</span><span class="ico-sun">☀</span>
+      </button>
+      <a href="#contact" class="nav-cta" data-ml="പ്രവേശനം">Admissions</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-arch"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow" data-ml="<i></i> സ്ഥാപിതം 1999 · പാംഗ്, കേരളം"><i></i> Est. 1999 · Pang, Kerala</span>
+
+    <div class="hero-arabic">المدرسة القادرية</div>
+    <h1 data-ml="അൽ മദ്റസത്തുൽ <em>ഖാദിരിയ്യ</em>">Al Madrasatul <em>Qadiriya</em></h1>
+
+    <div class="hero-rule"></div>
+
+    <p class="lead" data-ml="മലപ്പുറത്തിന്റെ ഹൃദയഭാഗത്തുള്ള ഒരു ഇസ്ലാമിക വിജ്ഞാന കേന്ദ്രം — ഓരോ വിദ്യാർത്ഥിയിലും ഖുർആനും ഉറച്ച അറിവും ഉത്തമ സ്വഭാവവും വളർത്തിയെടുക്കുന്നു.">
+      A centre of Islamic learning in the heart of Malappuram — nurturing the
+      Qur'an, sound knowledge and noble character in every student who walks
+      through our doors.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#about" class="btn btn-gold" data-ml="ഞങ്ങളുടെ കഥ അറിയുക">Discover Our Story</a>
+      <a href="#syllabus" class="btn btn-ghost" data-ml="പാഠ്യപദ്ധതി കാണുക">View Syllabus</a>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <span data-ml="ഖുർആനും ഹിഫ്സും">Qur'an &amp; Hifz</span>
+    <span data-ml="ഇസ്ലാമിക ശാസ്ത്രങ്ങൾ">Islamic Sciences</span>
+    <span data-ml="സ്വഭാവവും സേവനവും">Character &amp; Service</span>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<div class="container">
+  <div class="stats reveal">
+    <div class="stat"><b>25+</b><span data-ml="സേവന വർഷങ്ങൾ">Years of Service</span></div>
+    <div class="stat"><b>14</b><span data-ml="യോഗ്യരായ അധ്യാപകർ">Qualified Teachers</span></div>
+    <div class="stat"><b>260+</b><span data-ml="വിദ്യാർത്ഥികൾ">Students Enrolled</span></div>
+    <div class="stat"><b>90+</b><span data-ml="ഹാഫിസുമാർ">Huffaz Graduated</span></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="eyebrow" data-ml="മദ്റസയെക്കുറിച്ച്">About the Madrasa</span>
+        <h2 data-ml="വെളിച്ചത്തിന്റെ പാരമ്പര്യം, ലക്ഷ്യബോധമുള്ള നാളെ">A tradition of light, a future of purpose</h2>
+        <p data-ml="1999-ൽ മലപ്പുറം ജില്ലയിലെ പാംഗ് എന്ന ശാന്തമായ ഗ്രാമത്തിൽ, ഖുർആൻ മികവോടെ പഠിപ്പിക്കുകയും കുട്ടികളെ സൽസ്വഭാവികളായ, സമൂഹത്തിന് ഉപകാരപ്രദമായ വ്യക്തികളാക്കി വളർത്തുകയും ചെയ്യുക എന്ന സ്വപ്നത്തോടെ ഒരു ചെറിയ സംഘം പണ്ഡിതന്മാരും സുമനസ്സുകളും ചേർന്നാണ് അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ സ്ഥാപിച്ചത്.">
+          Al Madrasatul Qadiriya was founded in the year 1999 in the quiet village of
+          Pang, Malappuram, by a small group of scholars and well-wishers who dreamed of
+          a place where the Qur'an would be taught with excellence and where children
+          would grow into upright, useful members of society.
+        </p>
+        <p data-ml="പതിനൊന്ന് വിദ്യാർത്ഥികളുമായി ഒരു മുറിയിൽ ആരംഭിച്ചത്, അല്ലാഹുവിന്റെ അനുഗ്രഹത്താൽ, ഫൗണ്ടേഷൻ, ഇന്റർമീഡിയറ്റ്, അഡ്വാൻസ്ഡ്, ഹിഫ്സ് വിഭാഗങ്ങളിലായി ഇരുന്നൂറ്ററുപതിലധികം വിദ്യാർത്ഥികളെ സേവിക്കുന്ന ഒരു വളർന്ന സ്ഥാപനമായി മാറിയിരിക്കുന്നു. ഞങ്ങളുടെ അധ്യാപകർ പ്രശസ്ത ഇസ്ലാമിക സ്ഥാപനങ്ങളിലെ ബിരുദധാരികളാണ്, ഞങ്ങളുടെ വാതിലുകൾ സമൂഹത്തിലെ എല്ലാ കുട്ടികൾക്കും തുറന്നിരിക്കുന്നു.">
+          What began in a single room with eleven students has, by the grace of Allah,
+          grown into a thriving institution serving more than two hundred and sixty
+          students across foundation, intermediate, advanced and Hifz streams. Our
+          teachers are graduates of renowned Islamic institutions, and our doors remain
+          open to every child of the community.
+        </p>
+        <p data-ml="അറിവും സ്വഭാവവും വേർതിരിക്കാനാവാത്തതാണെന്ന് ഞങ്ങൾ വിശ്വസിക്കുന്നു. ഖുർആൻ, അറബി, ഇസ്ലാമിക ശാസ്ത്രങ്ങൾ എന്നിവയ്ക്കൊപ്പം, ഞങ്ങളുടെ വിദ്യാർത്ഥികൾ ആദാബിലും അച്ചടക്കത്തിലും സേവനത്തിലും രൂപപ്പെടുന്നു — അവർ ഏത് മാർഗം തിരഞ്ഞെടുത്താലും വിശ്വാസത്തിന്റെ വെളിച്ചം കൊണ്ടുപോകാൻ അവരെ സജ്ജരാക്കുന്നു.">
+          We believe knowledge and character are inseparable. Alongside Qur'an, Arabic
+          and the Islamic sciences, our students are formed in adab, discipline and
+          service — preparing them to carry the light of faith into whatever path they
+          choose.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill" data-ml="അഫിലിയേറ്റഡ് സിലബസ്">Affiliated Syllabus</span>
+          <span class="pill" data-ml="റെസിഡൻഷ്യൽ ഹിഫ്സ്">Residential Hifz</span>
+          <span class="pill" data-ml="സൗജന്യ വിദ്യാഭ്യാസം">Free Education</span>
+          <span class="pill" data-ml="സാമൂഹ്യ സേവനം">Community Service</span>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="arch-card">
+          <div class="arch-card-inner">
+            <div class="arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</div>
+            <p class="trans" data-ml="എന്റെ രക്ഷിതാവേ, എനിക്ക് അറിവ് വർദ്ധിപ്പിച്ചു തരേണമേ.">"And say: My Lord, increase me in knowledge."</p>
+            <span class="src" data-ml="സൂറത്ത് ത്വാഹാ · 20:114">Surah Ta-Ha · 20:114</span>
+          </div>
+        </div>
+        <div class="badge-float">
+          <b>1999</b>
+          <div><small data-ml="സ്ഥാപിതം">Established</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="values">
+      <div class="value reveal">
+        <div class="ico">ﷲ</div>
+        <h3 data-ml="വിശ്വാസം ഒന്നാമത്">Faith First</h3>
+        <p data-ml="ഓരോ പാഠവും തഖ്‌വയോടെ ആരംഭിക്കുകയും അവസാനിക്കുകയും ചെയ്യുന്നു. എല്ലാറ്റിനുമുപരിയായി അല്ലാഹുവുമായുള്ള ജീവിക്കുന്ന, ഹൃദയംഗമമായ ബന്ധം ഞങ്ങൾ വളർത്തിയെടുക്കുന്നു.">
+          Every lesson begins and ends with taqwa. We cultivate a living,
+          heartfelt connection with Allah before anything else.
+        </p>
+      </div>
+      <div class="value reveal">
+        <div class="ico">ع</div>
+        <h3 data-ml="അറിവിൽ മികവ്">Excellence in Knowledge</h3>
+        <p data-ml="യോഗ്യരായ പണ്ഡിതന്മാർ പഠിപ്പിക്കുന്ന ക്രമീകരിച്ച, ശ്രേണീകൃതമായ പാഠ്യപദ്ധതി — തുടർച്ചയായ മൂല്യനിർണ്ണയത്തോടെയും ഓരോ വിദ്യാർത്ഥിക്കും വ്യക്തിഗത ശ്രദ്ധയോടെയും.">
+          A structured, graded syllabus taught by qualified scholars, with
+          continuous assessment and individual attention for every student.
+        </p>
+      </div>
+      <div class="value reveal">
+        <div class="ico">خ</div>
+        <h3 data-ml="സ്വഭാവവും സേവനവും">Character &amp; Service</h3>
+        <p data-ml="ആദാബ്, സത്യസന്ധത, മുതിർന്നവരോടുള്ള ബഹുമാനം, സമൂഹത്തോടുള്ള കരുതൽ — ഇവയെല്ലാം ഏതൊരു പുസ്തകത്തെയും പോലെ ഞങ്ങളുടെ പാഠ്യപദ്ധതിയുടെ ഭാഗമാണ്.">
+          Adab, honesty, respect for elders and care for the community are as
+          much a part of our curriculum as any book.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERSE BAND ============ -->
+<div class="verse">
+  <div class="verse-inner reveal">
+    <div class="ar">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+    <p class="en" data-ml="അറിവ് നേടുന്നത് ഓരോ മുസ്ലിമിനും നിർബന്ധമാണ്.">"Seeking knowledge is an obligation upon every Muslim."</p>
+    <span class="ref" data-ml="സുനൻ ഇബ്ൻ മാജ">Sunan Ibn Majah</span>
+  </div>
+</div>
+
+<!-- ============ TEACHERS ============ -->
+<section class="section tint" id="teachers">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ml="ഞങ്ങളുടെ അധ്യാപകർ">Our Faculty</span>
+      <h2 data-ml="അധ്യാപകർ">The Teachers</h2>
+      <p data-ml="പവിത്രമായ അറിവ് കൈമാറാൻ ജീവിതം സമർപ്പിച്ച ഭക്തരായ പണ്ഡിതന്മാരും ഹാഫിസുമാരും — ക്ഷമയുള്ളവർ, പഠിതാക്കൾ, കരുതലുള്ളവർ.">
+        Devoted scholars and hafiz who have dedicated their lives to the
+        transmission of sacred knowledge — patient, learned and caring.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <article class="person reveal">
+        <div class="avatar">MQ</div>
+        <h3 data-ml="ഉസ്താദ് കെ. മുഹമ്മദ് ഖാദിരി">Usthad K. Muhammed Qadiri</h3>
+        <span class="role" data-ml="പ്രിൻസിപ്പൽ · ഫിഖ്ഹ്">Principal · Fiqh</span>
+        <p class="meta" data-ml="അൽ-അസ്‌ഹർ ബിരുദധാരി · 22 വർഷത്തെ അധ്യാപന പരിചയം">Al-Azhar Graduate · 22 years of teaching experience</p>
+        <span class="tag gold" data-ml="സ്ഥാപന മേധാവി">Head of Institution</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">AR</div>
+        <h3 data-ml="ഉസ്താദ് അബ്ദുൽ റഹ്‌മാൻ ഫൈസി">Usthad Abdul Rahman Faizi</h3>
+        <span class="role" data-ml="ഹിഫ്സ് &amp; തജ്‌വീദ്">Hifz &amp; Tajweed</span>
+        <p class="meta" data-ml="ഹാഫിസും ഖാരിയും · ഖിറാഅത്ത് ഹഫ്സിൽ സനദ്">Hafiz &amp; Qari · Sanad in Qira'at Hafs</p>
+        <span class="tag" data-ml="ഹിഫ്സ് വിഭാഗം">Hifz Department</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">SQ</div>
+        <h3 data-ml="ഉസ്താദ് സൈനുദ്ദീൻ ഖാദിരി">Usthad Sainudheen Qadiri</h3>
+        <span class="role" data-ml="ഹദീസ് &amp; തഫ്‌സീർ">Hadith &amp; Tafsir</span>
+        <p class="meta" data-ml="എം.എ. ഇസ്ലാമിക് സ്റ്റഡീസ് · തഫ്‌സീറിൽ വിദഗ്ധൻ">M.A. Islamic Studies · Specialist in Tafsir</p>
+        <span class="tag" data-ml="അഡ്വാൻസ്ഡ് ലെവൽ">Advanced Level</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">IK</div>
+        <h3 data-ml="ഉസ്താദ് ഇബ്രാഹിം ഖലീൽ">Usthad Ibrahim Khaleel</h3>
+        <span class="role" data-ml="അറബി ഭാഷ">Arabic Language</span>
+        <p class="meta" data-ml="അറബി സാഹിത്യത്തിൽ ബിരുദധാരി · നഹ്‌വും സർഫും">Graduate in Arabic Literature · Nahw &amp; Sarf</p>
+        <span class="tag" data-ml="ഭാഷാ വിഭാഗം">Language Dept.</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">NZ</div>
+        <h3 data-ml="ഉസ്താദ് നിസാമുദ്ദീൻ">Usthad Nizamudheen</h3>
+        <span class="role" data-ml="അഖീദ &amp; സീറ">Aqeedah &amp; Seerah</span>
+        <p class="meta" data-ml="12 വർഷത്തെ സേവനം · വിദ്യാർത്ഥികൾക്കിടയിൽ പ്രിയങ്കരൻ">12 years of service · Beloved among students</p>
+        <span class="tag" data-ml="ഇന്റർമീഡിയറ്റ്">Intermediate</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">SH</div>
+        <h3 data-ml="ഉസ്താദ് ശിഹാബുദ്ദീൻ">Usthad Shihabudheen</h3>
+        <span class="role" data-ml="ഉർദു &amp; മലയാളം">Urdu &amp; Malayalam</span>
+        <p class="meta" data-ml="ബി.എ. ഉർദു · സാഹിത്യ-സാംസ്കാരിക പ്രവർത്തനങ്ങൾ">B.A. Urdu · Literary and cultural activities</p>
+        <span class="tag" data-ml="ഭാഷകൾ">Languages</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">ZY</div>
+        <h3 data-ml="ഉസ്താദ് സൈനുദ്ദീൻ">Usthad Zainudheen</h3>
+        <span class="role" data-ml="ഖിറാഅത്ത് &amp; അദ്കാർ">Qira'at &amp; Adhkar</span>
+        <p class="meta" data-ml="ഖാരി · ദൈനംദിന രാവിലെ അസംബ്ലിയും ദുആയും നയിക്കുന്നു">Qari · Leads daily morning assembly and du'a</p>
+        <span class="tag gold" data-ml="ഖിറാഅത്ത്">Qira'at</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">BS</div>
+        <h3 data-ml="ഉസ്താദ് ബഷീർ അഹമ്മദ്">Usthad Basheer Ahmed</h3>
+        <span class="role" data-ml="അഖ്‌ലാഖ് &amp; മാർഗ്ഗദർശനം">Akhlaq &amp; Guidance</span>
+        <p class="meta" data-ml="വിദ്യാർത്ഥി കൗൺസിലർ · ഫൗണ്ടേഷൻ ലെവൽ കോർഡിനേറ്റർ">Student counsellor · Foundation level coordinator</p>
+        <span class="tag" data-ml="ഫൗണ്ടേഷൻ">Foundation</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDENTS ============ -->
+<section class="section" id="students">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ml="ഞങ്ങളുടെ വിദ്യാർത്ഥികൾ">Our Students</span>
+      <h2 data-ml="ഞങ്ങൾ പോഷിപ്പിക്കുന്ന ഹൃദയങ്ങൾ">The Hearts We Nurture</h2>
+      <p data-ml="ആദ്യ അറബി അക്ഷരങ്ങൾ പഠിക്കുന്ന ചെറിയ കുട്ടികൾ മുതൽ നമസ്കാരത്തിന് നേതൃത്വം നൽകുന്ന ഹാഫിസ് ബിരുദധാരികൾ വരെ — ഓരോ വിദ്യാർത്ഥിയും രൂപപ്പെടുന്ന ഒരു വെളിച്ചമാണ്.">
+        From young beginners learning their first Arabic letters to hafiz
+        graduates leading the prayer — every student is a light in the making.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <article class="person reveal">
+        <div class="avatar">AH</div>
+        <h3 data-ml="മുഹമ്മദ് ആഷിഖ്">Muhammed Ashiq</h3>
+        <span class="role" data-ml="ഹിഫ്സ് · അവസാന വർഷം">Hifz · Final Year</span>
+        <p class="meta" data-ml="30 ജുസ് പൂർത്തിയാക്കി · ജില്ലാ ഖിറാഅത്ത് മത്സരം 2024 വിജയി">Completed 30 Juz · Winner, District Qira'at Competition 2024</p>
+        <span class="tag gold" data-ml="ഹാഫിസ് ബിരുദധാരി">Hafiz Graduate</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">FZ</div>
+        <h3 data-ml="ഫാത്തിമ സഹ്‌റ">Fathima Zahra</h3>
+        <span class="role" data-ml="ആലി · ഒൻപതാം ക്ലാസ്">Aali · Grade 9</span>
+        <p class="meta" data-ml="അറബി വ്യാകരണത്തിൽ ക്ലാസിലെ ഒന്നാമത് · സ്കൂൾ മാഗസിൻ എഡിറ്റർ">Top of her class in Arabic Grammar · School Magazine Editor</p>
+        <span class="tag" data-ml="അക്കാദമിക് ടോപ്പർ">Academic Topper</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">IS</div>
+        <h3 data-ml="ഇബ്രാഹിം സാദിഖ്">Ibrahim Sadiq</h3>
+        <span class="role" data-ml="സാനവി · ഏഴാം ക്ലാസ്">Sanavi · Grade 7</span>
+        <p class="meta" data-ml="വെള്ളിയാഴ്ചത്തെ ദുആ അസംബ്ലി നയിക്കുന്നു · തജ്‌വീദിൽ മികവ്">Leads the Friday du'a assembly · Excellent in Tajweed</p>
+        <span class="tag" data-ml="ഖിറാഅത്ത് ടീം">Qira'at Team</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">AN</div>
+        <h3 data-ml="ആയിഷ നസ്‌റിൻ">Aysha Nasrin</h3>
+        <span class="role" data-ml="ആലി · എട്ടാം ക്ലാസ്">Aali · Grade 8</span>
+        <p class="meta" data-ml="സംസ്ഥാന ഇസ്ലാമിക് ക്വിസ് 2024 ഒന്നാം സ്ഥാനം · സീറ പ്രേമി">First place, State Islamic Quiz 2024 · Seerah enthusiast</p>
+        <span class="tag gold" data-ml="ക്വിസ് ചാമ്പ്യൻ">Quiz Champion</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">HK</div>
+        <h3 data-ml="അബ്ദുൽ ഹകീം">Abdul Hakeem</h3>
+        <span class="role" data-ml="ഹിഫ്സ് · മൂന്നാം വർഷം">Hifz · Year 3</span>
+        <p class="meta" data-ml="18 ജുസ് മനഃപാഠമാക്കി · മനോഹരമായ പാരായണത്തിന് പ്രശസ്തൻ">Memorised 18 Juz · Known for his beautiful recitation</p>
+        <span class="tag" data-ml="ഹിഫ്സ് വിദ്യാർത്ഥി">Hifz Student</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">SN</div>
+        <h3 data-ml="സഫ്‌വാൻ നാസിഹ്">Safwan Nasih</h3>
+        <span class="role" data-ml="സാനവി · ആറാം ക്ലാസ്">Sanavi · Grade 6</span>
+        <p class="meta" data-ml="എല്ലാ വർഷവും റമദാൻ ഇഫ്താർ പരിപാടിയിൽ സ്വയംസേവകൻ">Volunteers in the Ramadan iftar programme every year</p>
+        <span class="tag" data-ml="സാമൂഹ്യ സേവനം">Community Service</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">MJ</div>
+        <h3 data-ml="മറിയം ജസീല">Maryam Jaseela</h3>
+        <span class="role" data-ml="ഇബ്തിദായി · മൂന്നാം ക്ലാസ്">Ihthidai · Grade 3</span>
+        <p class="meta" data-ml="തജ്‌വീദ് അടിസ്ഥാനങ്ങളോടെ ഖുർആൻ പാരായണം പൂർത്തിയാക്കി">Completed Qur'an recitation with Tajweed basics</p>
+        <span class="tag" data-ml="ഉയരുന്ന നക്ഷത്രം">Rising Star</span>
+      </article>
+
+      <article class="person reveal">
+        <div class="avatar">YB</div>
+        <h3 data-ml="യാസീൻ ബഷീർ">Yaseen Basheer</h3>
+        <span class="role" data-ml="ആലി · പത്താം ക്ലാസ്">Aali · Grade 10</span>
+        <p class="meta" data-ml="സ്റ്റുഡന്റ് കൗൺസിൽ ലീഡർ · ജൂനിയർ ക്ലാസുകളെ അറബിയിൽ സഹായിക്കുന്നു">Student council leader · Assists junior classes in Arabic</p>
+        <span class="tag gold" data-ml="വിദ്യാർത്ഥി നേതാവ്">Student Leader</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYLLABUS ============ -->
+<section class="section tint" id="syllabus">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ml="പാഠ്യപദ്ധതി">Curriculum</span>
+      <h2 data-ml="പാഠ്യപദ്ധതി">The Syllabus</h2>
+      <p data-ml="ആദ്യ അറബി അക്ഷരം മുതൽ ഉയർന്ന ഇസ്ലാമിക ശാസ്ത്രങ്ങൾ വരെ — പത്ത് വർഷം നീളുന്ന സൂക്ഷ്മമായി ക്രമീകരിച്ച പഠന കോഴ്‌സ്.">
+        A carefully graded course of study spanning ten years — from the first
+        Arabic letter to the advanced Islamic sciences.
+      </p>
+    </div>
+
+    <div class="tabs reveal" id="tabs">
+      <button class="tab active" data-panel="p1" data-ml="ഇബ്തിദായി · ഫൗണ്ടേഷൻ">Ihthidai · Foundation</button>
+      <button class="tab" data-panel="p2" data-ml="സാനവി · ഇന്റർമീഡിയറ്റ്">Sanavi · Intermediate</button>
+      <button class="tab" data-panel="p3" data-ml="ആലി · അഡ്വാൻസ്ഡ്">Aali · Advanced</button>
+      <button class="tab" data-panel="p4" data-ml="ഹിഫ്സ് · മനഃപാഠം">Hifz · Memorisation</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="tab-panel active" id="p1">
+      <div class="syllabus-card">
+        <div>
+          <div class="level" data-ml="ഇബ്തിദായി">Ihthidai</div>
+          <div class="arabic-name">ابتدائي</div>
+          <p class="desc" data-ml="കുട്ടികൾ ഖുർആനിലേക്കും അറബി ഭാഷയിലേക്കും ആദ്യ ചുവടുകൾ വയ്ക്കുന്ന അടിസ്ഥാന ഘട്ടം. ഇവിടെ പഠനം സൗമ്യവും സന്തോഷകരവും സ്‌നേഹത്തിൽ വേരൂന്നിയതുമാണ് — കഥകളോടെയും പാട്ടുകളോടെയും ധാരാളം പ്രോത്സാഹനത്തോടെയും.">
+            The foundational stage, where children take their first steps into the
+            Qur'an and the Arabic language. Learning here is gentle, joyful and
+            rooted in love — with stories, songs and plenty of encouragement.
+          </p>
+          <ul class="spec">
+            <li><span data-ml="ക്ലാസുകൾ">Grades</span><span>1 – 3</span></li>
+            <li><span data-ml="കാലയളവ്">Duration</span><span data-ml="3 വർഷം">3 Years</span></li>
+            <li><span data-ml="ക്ലാസ് സമയം">Class Hours</span><span data-ml="രാവിലെ 7:00 – 10:30">7:00 – 10:30 AM</span></li>
+            <li><span data-ml="മൂല്യനിർണ്ണയം">Assessment</span><span data-ml="പ്രതിമാസം + വാർഷികം">Monthly + Annual</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="subjects-title" data-ml="ലഭ്യമായ വിഷയങ്ങൾ">Subjects Offered</span>
+          <div class="subject-grid">
+            <div class="subject" data-ml="ഖുർആൻ പാരായണം <small>ശരിയായ ഉച്ചാരണത്തോടെ നാസിറ</small>">Qur'an Recitation <small>Nazira with correct pronunciation</small></div>
+            <div class="subject" data-ml="തജ്‌വീദ് അടിസ്ഥാനങ്ങൾ <small>മഖാരിജും ലളിതമായ നിയമങ്ങളും</small>">Tajweed Basics <small>Makharij and simple rules</small></div>
+            <div class="subject" data-ml="അറബി അക്ഷരമാല <small>വായന, എഴുത്ത്, ചേർത്തെഴുത്ത്</small>">Arabic Alphabet <small>Reading, writing and joining</small></div>
+            <div class="subject" data-ml="ദുആകളും അദ്കാറുകളും <small>ദൈനംദിന, അവസരോചിത പ്രാർത്ഥനകൾ</small>">Du'as &amp; Adhkar <small>Daily and occasional supplications</small></div>
+            <div class="subject" data-ml="സീറ കഥകൾ <small>കുട്ടികൾക്കായി പ്രവാചകൻ ﷺ യുടെ ജീവിതം</small>">Seerah Stories <small>Life of the Prophet ﷺ for children</small></div>
+            <div class="subject" data-ml="അഖ്‌ലാഖ് <small>മര്യാദ, സത്യസന്ധത, ബഹുമാനം</small>">Akhlaq <small>Manners, honesty, respect</small></div>
+            <div class="subject" data-ml="മലയാളം <small>വായനയും എഴുത്തും</small>">Malayalam <small>Reading and writing</small></div>
+            <div class="subject" data-ml="ഇസ്ലാമിക അടിസ്ഥാനങ്ങൾ <small>സ്തംഭങ്ങൾ, വിശ്വാസം, നമസ്കാരം</small>">Islamic Basics <small>Pillars, faith and prayer</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="tab-panel" id="p2">
+      <div class="syllabus-card">
+        <div>
+          <div class="level" data-ml="സാനവി">Sanavi</div>
+          <div class="arabic-name">ثانوي</div>
+          <p class="desc" data-ml="ഇന്റർമീഡിയറ്റ് ഘട്ടം ആഴം കൂട്ടുന്നു. വിദ്യാർത്ഥികൾ പാരായണത്തിൽ നിന്ന് ഗ്രഹണത്തിലേക്കും, മനഃപാഠത്തിൽ നിന്ന് യുക്തിയിലേക്കും നീങ്ങുന്നു — അർത്ഥത്തോടെ ഖുർആൻ, ഇസ്ലാമിക നിയമം, അറബി ഭാഷയുടെ ഘടന എന്നിവ പഠിക്കുന്നു.">
+            The intermediate stage builds depth. Students move from reciting to
+            understanding, from memorising to reasoning — studying the Qur'an with
+            meaning, Islamic law, and the structure of the Arabic language.
+          </p>
+          <ul class="spec">
+            <li><span data-ml="ക്ലാസുകൾ">Grades</span><span>4 – 7</span></li>
+            <li><span data-ml="കാലയളവ്">Duration</span><span data-ml="4 വർഷം">4 Years</span></li>
+            <li><span data-ml="ക്ലാസ് സമയം">Class Hours</span><span data-ml="രാവിലെ 7:00 – 12:00">7:00 – 12:00 PM</span></li>
+            <li><span data-ml="മൂല്യനിർണ്ണയം">Assessment</span><span data-ml="ടേം തിരിച്ച് + വാർഷികം">Term-wise + Annual</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="subjects-title" data-ml="ലഭ്യമായ വിഷയങ്ങൾ">Subjects Offered</span>
+          <div class="subject-grid">
+            <div class="subject" data-ml="അർത്ഥത്തോടെ ഖുർആൻ <small>വാക്കുതോറും വിവർത്തനം</small>">Qur'an with Meaning <small>Word-by-word translation</small></div>
+            <div class="subject" data-ml="ഫിഖ്ഹ് <small>ആരാധന, ഇടപാടുകൾ, ദൈനംദിന വിധികൾ</small>">Fiqh <small>Worship, transactions, daily rulings</small></div>
+            <div class="subject" data-ml="അഖീദ <small>വിശ്വാസത്തിന്റെ അടിസ്ഥാനങ്ങൾ</small>">Aqeedah <small>Foundations of belief</small></div>
+            <div class="subject" data-ml="ഹദീസ് അടിസ്ഥാനങ്ങൾ <small>വിശദീകരണത്തോടെ തിരഞ്ഞെടുത്ത നിവേദനങ്ങൾ</small>">Hadith Basics <small>Selected narrations with explanation</small></div>
+            <div class="subject" data-ml="നഹ്‌വും സർഫും <small>അറബി വ്യാകരണവും രൂപശാസ്ത്രവും</small>">Nahw &amp; Sarf <small>Arabic grammar and morphology</small></div>
+            <div class="subject" data-ml="ഇസ്ലാമിക ചരിത്രം <small>പ്രവാചകൻ ﷺ മുതൽ ഇന്നുവരെ</small>">Islamic History <small>From the Prophet ﷺ to the present</small></div>
+            <div class="subject" data-ml="ഉർദു <small>വായന, എഴുത്ത്, ഗ്രഹണം</small>">Urdu <small>Reading, writing and comprehension</small></div>
+            <div class="subject" data-ml="മലയാളവും ഇംഗ്ലീഷും <small>ഭാഷയും ആവിഷ്കാരവും</small>">Malayalam &amp; English <small>Language and expression</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="tab-panel" id="p3">
+      <div class="syllabus-card">
+        <div>
+          <div class="level" data-ml="ആലി">Aali</div>
+          <div class="arabic-name">عالي</div>
+          <p class="desc" data-ml="അഡ്വാൻസ്ഡ് ഘട്ടം പണ്ഡിതന്മാരെ തയ്യാറാക്കുന്നു. വിദ്യാർത്ഥികൾ ക്ലാസിക്കൽ ഗ്രന്ഥങ്ങളുമായി നേരിട്ട് ഇടപെടുന്നു, സ്വതന്ത്ര യുക്തിയുടെ ഉപകരണങ്ങൾ പഠിക്കുന്നു, ആത്മവിശ്വാസത്തോടെ പഠിപ്പിക്കാനും നയിക്കാനും സമൂഹത്തെ സേവിക്കാനും പരിശീലിപ്പിക്കപ്പെടുന്നു.">
+            The advanced stage prepares scholars. Students engage directly with
+            classical texts, learn the tools of independent reasoning, and are
+            trained to teach, lead and serve the community with confidence.
+          </p>
+          <ul class="spec">
+            <li><span data-ml="ക്ലാസുകൾ">Grades</span><span>8 – 10</span></li>
+            <li><span data-ml="കാലയളവ്">Duration</span><span data-ml="3 വർഷം">3 Years</span></li>
+            <li><span data-ml="ക്ലാസ് സമയം">Class Hours</span><span data-ml="രാവിലെ 7:00 – 1:00">7:00 – 1:00 PM</span></li>
+            <li><span data-ml="മൂല്യനിർണ്ണയം">Assessment</span><span data-ml="സെമസ്റ്റർ + ഫൈനൽ + തീസിസ്">Semester + Final + Thesis</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="subjects-title" data-ml="ലഭ്യമായ വിഷയങ്ങൾ">Subjects Offered</span>
+          <div class="subject-grid">
+            <div class="subject" data-ml="തഫ്‌സീർ <small>ക്ലാസിക്കൽ, സമകാലിക വ്യാഖ്യാനങ്ങൾ</small>">Tafsir <small>Classical and contemporary commentary</small></div>
+            <div class="subject" data-ml="ഹദീസ് ശാസ്ത്രങ്ങൾ <small>മുസ്തലഹും തിരഞ്ഞെടുത്ത ഗ്രന്ഥങ്ങളും</small>">Hadith Sciences <small>Mustalah and selected texts</small></div>
+            <div class="subject" data-ml="ഉസൂലുൽ ഫിഖ്ഹ് <small>ഇസ്ലാമിക നിയമശാസ്ത്രത്തിന്റെ തത്വങ്ങൾ</small>">Usul al-Fiqh <small>Principles of Islamic jurisprudence</small></div>
+            <div class="subject" data-ml="ബലാഗ <small>അറബി അലങ്കാരവും വാക്ചാതുരിയും</small>">Balagha <small>Arabic rhetoric and eloquence</small></div>
+            <div class="subject" data-ml="അറബി സാഹിത്യം <small>കവിതയും ക്ലാസിക്കൽ ഗദ്യവും</small>">Arabic Literature <small>Poetry and classical prose</small></div>
+            <div class="subject" data-ml="മന്തിഖ് <small>യുക്തിയും ശരിയായ വിചാരവും</small>">Mantiq <small>Logic and sound reasoning</small></div>
+            <div class="subject" data-ml="താരതമ്യ മതപഠനം <small>സംവാദവും ധാരണയും</small>">Comparative Religion <small>Dialogue and understanding</small></div>
+            <div class="subject" data-ml="അധ്യാപന പരിശീലനം <small>ക്ലാസ്‌റൂം പരിശീലനവും അവതരണവും</small>">Teaching Practice <small>Classroom training and delivery</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="tab-panel" id="p4">
+      <div class="syllabus-card">
+        <div>
+          <div class="level" data-ml="ഹിഫ്സുൽ ഖുർആൻ">Hifz ul Qur'an</div>
+          <div class="arabic-name">حفظ القرآن</div>
+          <p class="desc" data-ml="യോഗ്യതയും സമർപ്പണവും കാണിക്കുന്ന വിദ്യാർത്ഥികൾക്കായുള്ള സമർപ്പിതമായ മനഃപാഠ പരിപാടി. പരിചയസമ്പന്നരായ ഹാഫിസുമാരുടെ മാർഗ്ഗദർശനത്തിൽ, ദൈനംദിന ആവർത്തനം, തജ്‌വീദ് പരിഷ്കരണം, ക്രമീകരിച്ച ലക്ഷ്യങ്ങൾ.">
+            A dedicated, residential-style memorisation programme for students who
+            show aptitude and commitment. Guided by experienced huffaz, with daily
+            revision, tajweed refinement and structured targets.
+          </p>
+          <ul class="spec">
+            <li><span data-ml="കാലയളവ്">Duration</span><span data-ml="3 – 5 വർഷം">3 – 5 Years</span></li>
+            <li><span data-ml="ദൈനംദിന ഭാഗം">Daily Portion</span><span data-ml="1 – 1.5 പേജ്">1 – 1.5 Pages</span></li>
+            <li><span data-ml="ക്ലാസ് സമയം">Class Hours</span><span data-ml="പുലർച്ചെ 5:00 – 1:00">5:00 AM – 1:00 PM</span></li>
+            <li><span data-ml="മൂല്യനിർണ്ണയം">Assessment</span><span data-ml="പ്രതിവാരം + പ്രതിമാസ ആവർത്തനം">Weekly + Monthly Revision</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="subjects-title" data-ml="പരിപാടിയുടെ ഘടകങ്ങൾ">Programme Components</span>
+          <div class="subject-grid">
+            <div class="subject" data-ml="പുതിയ പാഠം <small>ദൈനംദിന പുതിയ മനഃപാഠം</small>">New Lesson <small>Daily fresh memorisation</small></div>
+            <div class="subject" data-ml="സബ്ഖ് ആവർത്തനം <small>സമീപകാല ഭാഗം അവലോകനം</small>">Sabq Revision <small>Recent portion review</small></div>
+            <div class="subject" data-ml="മൻസിൽ ആവർത്തനം <small>ദീർഘകാല നിലനിർത്തൽ ചക്രം</small>">Manzil Revision <small>Long-term retention cycle</small></div>
+            <div class="subject" data-ml="തജ്‌വീദ് പരിഷ്കരണം <small>ഉച്ചാരണ തിരുത്തൽ</small>">Tajweed Refinement <small>Pronunciation correction</small></div>
+            <div class="subject" data-ml="ഖിറാഅത്ത് പരിശീലനം <small>മധുരമായ പാരായണ അഭ്യാസം</small>">Qira'at Training <small>Melodious recitation practice</small></div>
+            <div class="subject" data-ml="തഫ്‌സീർ സെഷനുകൾ <small>മനഃപാഠമാക്കിയ വചനങ്ങളുടെ അർത്ഥം</small>">Tafsir Sessions <small>Meaning of memorised verses</small></div>
+            <div class="subject" data-ml="അദ്കാറും ദുആയും <small>ദൈനംദിന ആത്മീയ ദിനചര്യ</small>">Adhkar &amp; Du'a <small>Daily spiritual routine</small></div>
+            <div class="subject" data-ml="ദസ്താർ ബന്ദി <small>പൂർത്തിയാക്കുമ്പോഴുള്ള ബിരുദ ചടങ്ങ്</small>">Dastar Bandi <small>Graduation ceremony upon completion</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section class="section" id="events">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ml="അവസരങ്ങളും സമ്മേളനങ്ങളും">Occasions &amp; Gatherings</span>
+      <h2 data-ml="മദ്റസയിലെ പരിപാടികൾ">Events at the Madrasa</h2>
+      <p data-ml="ഞങ്ങളുടെ കലണ്ടർ ഇസ്ലാമിക വർഷത്തിന്റെ താളങ്ങളാൽ നെയ്തതാണ് — ആരാധന, സ്മരണ, ആഘോഷം, സമൂഹം എന്നിവയുടെ കാലങ്ങൾ.">
+        Our calendar is woven with the rhythms of the Islamic year — seasons of
+        worship, remembrance, celebration and community.
+      </p>
+    </div>
+
+    <div class="events-grid">
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="റബീഉൽ അവ്വൽ">Rabi' al-Awwal</span>
+          <h3 data-ml="മീലാദുൻ നബി ﷺ">Milad un-Nabi ﷺ</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="ഞങ്ങളുടെ ഏറ്റവും വലിയ വാർഷിക സമ്മേളനം — ഖസീദ പാരായണം, പ്രവാചകൻ ﷺ യുടെ ജീവിതത്തെക്കുറിച്ചുള്ള പണ്ഡിത പ്രഭാഷണങ്ങൾ, പാംഗിലൂടെയുള്ള മെഴുകുതിരി പ്രദക്ഷിണം, എല്ലാവർക്കുമുള്ള സമൂഹ വിരുന്ന്.">
+            Our largest annual gathering — a week of qasida recitation, scholarly
+            talks on the life of the Prophet ﷺ, a candlelit procession through
+            Pang, and a community feast for all.
+          </p>
+          <div class="event-foot">
+            <span data-ml="വാർഷികം · 7 ദിവസം">Annual · 7 Days</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="റമദാൻ">Ramadan</span>
+          <h3 data-ml="ഇഫ്താർ &amp; തറാവീഹ്">Iftar &amp; Taraweeh</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="വിദ്യാർത്ഥികൾക്കും സമൂഹത്തിനും ദൈനംദിന ഇഫ്താർ, ഞങ്ങളുടെ മുതിർന്ന ഹാഫിസുമാർ നയിക്കുന്ന പ്രത്യേക തറാവീഹ് നമസ്കാരം, 27-ാം രാത്രിയിൽ പൂർണ്ണ ഖുർആൻ പാരായണം (ഖത്മ്).">
+            Daily iftar served to students and the community, special taraweeh
+            prayers led by our senior huffaz, and a full Qur'an completion
+            (Khatm) on the 27th night.
+          </p>
+          <div class="event-foot">
+            <span data-ml="30 ദിവസം · ദൈനംദിനം">30 Days · Daily</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="ശഅ്‌ബാൻ">Sha'ban</span>
+          <h3 data-ml="വാർഷിക ഊരൂസ്">Annual Uroos</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="ഞങ്ങളുടെ സ്ഥാപക പണ്ഡിതന്മാരെ ആദരിക്കുന്ന മൂന്ന് ദിവസത്തെ ആത്മീയ ആഘോഷം — ദിക്ർ വൃത്തങ്ങൾ, പ്രഭാഷണങ്ങൾ, ഖത്മുൽ ഖുർആൻ, അവസാന വൈകുന്നേരം വലിയ പൊതു സമ്മേളനം.">
+            A three-day spiritual celebration honouring our founding scholars —
+            with dhikr circles, speeches, Khatm ul Qur'an and a grand public
+            gathering on the final evening.
+          </p>
+          <div class="event-foot">
+            <span data-ml="3 ദിവസം · സമൂഹം">3 Days · Community</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="അധ്യയന വർഷാവസാനം">End of Academic Year</span>
+          <h3 data-ml="ദസ്താർ ബന്ദി — ഹിഫ്സ് ബിരുദം">Dastar Bandi — Hifz Graduation</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="ഞങ്ങളുടെ കലണ്ടറിലെ ഏറ്റവും വിലപ്പെട്ട ദിവസം — മുഴുവൻ ഖുർആനും മനഃപാഠമാക്കി പൂർത്തിയാക്കിയ വിദ്യാർത്ഥികളെ പരമ്പരാഗത തലപ്പാവ് ചടങ്ങോടെയും ദുആയോടെയും ആദരിക്കുന്നു.">
+            The most cherished day in our calendar — honouring students who have
+            completed the memorisation of the entire Qur'an, with the traditional
+            turban ceremony and du'a.
+          </p>
+          <div class="event-foot">
+            <span data-ml="വാർഷികം · ചടങ്ങ്">Annual · Ceremony</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="റജബ്">Rajab</span>
+          <h3 data-ml="ഖിറാഅത്ത് &amp; ഇസ്ലാമിക് ക്വിസ് മത്സരം">Qira'at &amp; Islamic Quiz Competition</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="മലപ്പുറത്തുടനീളമുള്ള മദ്റസകളിൽ നിന്നുള്ള പങ്കാളികളെ ആകർഷിക്കുന്ന മത്സരം — ഖുർആൻ പാരായണം, തജ്‌വീദ്, ഇസ്ലാമിക വിജ്ഞാനം, അറബി പ്രസംഗം എന്നിവയിൽ വിഭാഗങ്ങൾ.">
+            An inter-madrasa competition drawing participants from across
+            Malappuram — categories in Qur'an recitation, tajweed, Islamic
+            knowledge and Arabic speech.
+          </p>
+          <div class="event-foot">
+            <span data-ml="പ്രാദേശികം · 2 ദിവസം">Regional · 2 Days</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <div class="event-top">
+          <span class="event-date" data-ml="ശവ്വാൽ &amp; ദുൽ ഹിജ്ജ">Shawwal &amp; Dhul Hijjah</span>
+          <h3 data-ml="ഈദ് മിലാപ് &amp; ഖുർബാനി">Eid Milap &amp; Qurbani</h3>
+        </div>
+        <div class="event-body">
+          <p data-ml="ഞങ്ങളുടെ മൈതാനത്ത് ഈദ് നമസ്കാര സമ്മേളനങ്ങൾ, സമൂഹത്തിനുള്ള പങ്കിട്ട പ്രഭാതഭക്ഷണം, പ്രദേശത്തുടനീളമുള്ള കുടുംബങ്ങളിലേക്ക് എത്തുന്ന വാർഷിക ഖുർബാനി വിതരണം.">
+            Eid prayer gatherings on our grounds, a shared breakfast for the
+            community, and the annual Qurbani distribution reaching families
+            across the locality.
+          </p>
+          <div class="event-foot">
+            <span data-ml="വർഷത്തിൽ രണ്ടുതവണ">Twice Yearly</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section tint" id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <span class="eyebrow" data-ml="ബന്ധപ്പെടുക">Get in Touch</span>
+        <h2 data-ml="ഞങ്ങളെ സന്ദർശിക്കുക, വിളിക്കുക, എഴുതുക">Visit, Call or Write to Us</h2>
+        <p data-ml="നിങ്ങളുടെ കുട്ടിക്ക് പ്രവേശനം തേടുന്ന ഒരു രക്ഷിതാവാണെങ്കിലും, ഞങ്ങളുടെ പ്രവർത്തനത്തെ പിന്തുണയ്ക്കാൻ ആഗ്രഹിക്കുന്ന ഒരു സുമനസ്സാണെങ്കിലും, മലപ്പുറത്തിലൂടെ കടന്നുപോകുന്ന ഒരു സന്ദർശകനാണെങ്കിലും — അൽ മദ്റസത്തുൽ ഖാദിരിയ്യയിൽ നിങ്ങൾക്ക് എപ്പോഴും സ്വാഗതം.">
+          Whether you are a parent seeking admission for your child, a well-wisher
+          wanting to support our work, or a visitor passing through Malappuram —
+          you are always welcome at Al Madrasatul Qadiriya.
+        </p>
+
+        <div class="info-item">
+          <div class="ico">📍</div>
+          <div>
+            <strong data-ml="വിലാസം">Address</strong>
+            <p data-ml="അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ, പാംഗ് പി.ഒ.,<br>മലപ്പുറം ജില്ല, കേരളം — 676 506, ഇന്ത്യ">Al Madrasatul Qadiriya, Pang P.O.,<br>Malappuram District, Kerala — 676 506, India</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">☎</div>
+          <div>
+            <strong data-ml="ഫോൺ">Phone</strong>
+            <p><a href="tel:+919000000000">+91 90000 00000</a> · <a href="tel:+919000000001">+91 90000 00001</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">✉</div>
+          <div>
+            <strong data-ml="ഇമെയിൽ">Email</strong>
+            <p><a href="mailto:info@almadrasatulqadiriya.in">info@almadrasatulqadiriya.in</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">🕐</div>
+          <div>
+            <strong data-ml="ഓഫീസ് സമയം">Office Hours</strong>
+            <p data-ml="ശനി – വ്യാഴം · രാവിലെ 8:00 – വൈകുന്നേരം 4:00<br>വെള്ളി · അവധി (ജുമുഅ)">Saturday – Thursday · 8:00 AM – 4:00 PM<br>Friday · Closed (Jumu'ah)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name" data-ml="മുഴുവൻ പേര്">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" data-ml-ph="നിങ്ങളുടെ പേര്" required>
+            </div>
+            <div class="field">
+              <label for="phone" data-ml="ഫോൺ">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 ..." required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email" data-ml="ഇമെയിൽ">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label for="subject" data-ml="ഞാൻ എഴുതുന്നത് ഇതിനെക്കുറിച്ചാണ്">I am writing about</label>
+            <select id="subject" name="subject">
+              <option data-ml="പ്രവേശന അന്വേഷണം">Admission Enquiry</option>
+              <option data-ml="ഹിഫ്സ് പരിപാടി">Hifz Programme</option>
+              <option data-ml="സംഭാവന / പിന്തുണ">Donation / Support</option>
+              <option data-ml="പൊതു അന്വേഷണം">General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message" data-ml="സന്ദേശം">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help..." data-ml-ph="ഞങ്ങൾക്ക് എങ്ങനെ സഹായിക്കാമെന്ന് പറയുക..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold" data-ml="സന്ദേശം അയയ്ക്കുക">Send Message</button>
+          <p class="form-note" data-ml="ഞങ്ങൾ സാധാരണയായി ഒരു പ്രവൃത്തിദിവസത്തിനുള്ളിൽ മറുപടി നൽകും, ഇൻശാ അല്ലാഹ്.">We usually reply within one working day, in shā’ Allah.</p>
+          <div class="form-success" id="formSuccess" data-ml="ജസാകല്ലാഹു ഖൈറൻ — നിങ്ങളുടെ സന്ദേശം ലഭിച്ചിട്ടുണ്ട്. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.">
+            Jazāk Allāhu Khayran — your message has been received. We will get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAP STRIP -->
+    <div class="map-strip reveal">
+      <div class="map-strip-inner">
+        <h3 data-ml="പാംഗ്, മലപ്പുറത്ത് ഞങ്ങളെ കണ്ടെത്തുക">Find Us in Pang, Malappuram</h3>
+        <p data-ml="പാംഗ് ടൗണിൽ നിന്ന് അൽപ്പദൂരത്തിൽ, മലപ്പുറത്തുനിന്നും മഞ്ചേരിയിൽ നിന്നും റോഡ് മാർഗ്ഗം എളുപ്പത്തിൽ എത്താവുന്ന സ്ഥലത്താണ് ഞങ്ങൾ.">We are located a short distance from Pang town, easily reachable by road from Malappuram and Manjeri.</p>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Pang%2C+Malappuram%2C+Kerala" target="_blank" rel="noopener" data-ml="ഗൂഗിൾ മാപ്പിൽ തുറക്കുക">Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark">ق</span>
+          <span>
+            <strong data-ml="അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ">Al Madrasatul Qadiriya</strong>
+            <small data-ml="പാംഗ് · മലപ്പുറം · കേരളം">Pang · Malappuram · Kerala</small>
+          </span>
+        </div>
+        <p class="foot-about" data-ml="1999 മുതൽ പാംഗിലെയും വിശാല മലപ്പുറത്തിലെയും സമൂഹത്തെ സേവിക്കുന്ന ഒരു ഇസ്ലാമിക വിജ്ഞാന കേന്ദ്രം — ഖുർആൻ, ഇസ്ലാമിക ശാസ്ത്രങ്ങൾ, നന്നായി ജീവിക്കാനുള്ള കല എന്നിവ പഠിപ്പിക്കുന്നു.">
+          A centre of Islamic learning serving the community of Pang and greater
+          Malappuram since 1999 — teaching the Qur'an, the Islamic sciences and
+          the art of living well.
+        </p>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-ml="കണ്ടെത്തുക">Explore</h4>
+        <ul>
+          <li><a href="#home" data-ml="ഹോം">Home</a></li>
+          <li><a href="#about" data-ml="ഞങ്ങളെക്കുറിച്ച്">About Us</a></li>
+          <li><a href="#teachers" data-ml="അധ്യാപകർ">Teachers</a></li>
+          <li><a href="#students" data-ml="വിദ്യാർത്ഥികൾ">Students</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-ml="അക്കാദമിക്">Academics</h4>
+        <ul>
+          <li><a href="#syllabus" data-ml="പാഠ്യപദ്ധതി">Syllabus</a></li>
+          <li><a href="#syllabus" data-ml="ഹിഫ്സ് പരിപാടി">Hifz Programme</a></li>
+          <li><a href="#events" data-ml="പരിപാടികൾ">Events</a></li>
+          <li><a href="#contact" data-ml="പ്രവേശനം">Admissions</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-ml="ബന്ധപ്പെടുക">Contact</h4>
+        <p data-ml="പാംഗ് പി.ഒ., മലപ്പുറം,<br>കേരളം — 676 506<br><br>">
+          Pang P.O., Malappuram,<br>Kerala — 676 506<br><br>
+          <a href="tel:+919000000000">+91 90000 00000</a><br>
+          <a href="mailto:info@almadrasatulqadiriya.in">info@almadrasatulqadiriya.in</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span data-ml="© <span id='yearMl'></span> അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ, പാംഗ്. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.">© <span id="year"></span> Al Madrasatul Qadiriya, Pang. All rights reserved.</span>
+      <span class="arabic">وَاللَّهُ يَهْدِي مَن يَشَاءُ إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+/* ============================================================
+   THEME
+============================================================ */
+const themeBtn = document.getElementById('themeBtn');
+
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  try{ localStorage.setItem('aq-theme', t); }catch(e){}
+  themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+});
+applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+/* ============================================================
+   LANGUAGE
+============================================================ */
+const langBtn = document.getElementById('langBtn');
+let currentLang = 'en';
+
+try{
+  const saved = localStorage.getItem('aq-lang');
+  if(saved === 'ml' || saved === 'en') currentLang = saved;
+}catch(e){}
+
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  try{ localStorage.setItem('aq-lang', lang); }catch(e){}
+
+  /* text content (skip <option>) */
+  document.querySelectorAll('[data-ml]:not(option)').forEach(el => {
+    if(el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+    el.innerHTML = (lang === 'ml') ? el.dataset.ml : el.dataset.en;
+  });
+
+  /* select options */
+  document.querySelectorAll('option[data-ml]').forEach(el => {
+    if(el.dataset.en === undefined) el.dataset.en = el.textContent;
+    el.textContent = (lang === 'ml') ? el.dataset.ml : el.dataset.en;
+  });
+
+  /* placeholders */
+  document.querySelectorAll('[data-ml-ph]').forEach(el => {
+    if(el.dataset.enPh === undefined) el.dataset.enPh = el.placeholder;
+    el.placeholder = (lang === 'ml') ? el.dataset.mlPh : el.dataset.enPh;
+  });
+
+  /* toggle button label */
+  langBtn.textContent = (lang === 'ml') ? 'ML' : 'EN';
+  langBtn.setAttribute('aria-label', lang === 'ml' ? 'Switch to English' : 'മലയാളത്തിലേക്ക് മാറ്റുക');
+  langBtn.title = lang === 'ml' ? 'Switch to English' : 'Switch to Malayalam';
+
+  /* document title */
+  document.title = (lang === 'ml')
+    ? 'അൽ മദ്റസത്തുൽ ഖാദിരിയ്യ — പാംഗ്, മലപ്പുറം'
+    : 'Al Madrasatul Qadiriya — Pang, Malappuram';
+
+  /* year inside footer span (re-created after innerHTML swap) */
+  const y = new Date().getFullYear();
+  const yEl = document.getElementById('year');
+  if(yEl) yEl.textContent = y;
+}
+
+langBtn.addEventListener('click', () => {
+  setLang(currentLang === 'en' ? 'ml' : 'en');
+});
+
+/* ============================================================
+   NAV SCROLL STATE
+============================================================ */
+const nav = document.getElementById('nav');
+const toTop = document.getElementById('toTop');
+
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 40);
+  toTop.classList.toggle('show', y > 700);
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+const menuBtn = document.getElementById('menuBtn');
+menuBtn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+document.querySelectorAll('#links a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+  });
+});
+
+/* ============================================================
+   SCROLL SPY
+============================================================ */
+const sections = [...document.querySelectorAll('section[id]')];
+const navLinks = [...document.querySelectorAll('#links a')];
+
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+sections.forEach(s => spy.observe(s));
+
+/* ============================================================
+   REVEAL ON SCROLL
+============================================================ */
+const revealEls = document.querySelectorAll('.reveal');
+const revealer = new IntersectionObserver((entries, obs) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      const siblings = [...entry.target.parentElement.children].filter(c => c.classList.contains('reveal'));
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = Math.min(idx, 5) * 70 + 'ms';
+      entry.target.classList.add('in');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealer.observe(el));
+
+/* ============================================================
+   SYLLABUS TABS
+============================================================ */
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById(tab.dataset.panel);
+    if(panel) panel.classList.add('active');
+  });
+});
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const message = form.message.value.trim();
+
+  if(!name || !phone || !message){
+    [form.name, form.phone, form.message].forEach(f => {
+      if(!f.value.trim()){
+        f.style.borderColor = '#c0392b';
+        f.style.boxShadow = '0 0 0 4px rgba(192,57,43,.10)';
+        setTimeout(() => { f.style.borderColor = ''; f.style.boxShadow = ''; }, 2200);
+      }
+    });
+    return;
+  }
+
+  success.classList.add('show');
+  form.reset();
+  setTimeout(() => success.classList.remove('show'), 7000);
+});
+
+/* ============================================================
+   BACK TO TOP
+============================================================ */
+toTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ============================================================
+   INIT
+============================================================ */
+onScroll();
+setLang(currentLang);
+</script>
+
+</body>
+</html>
